@@ -28,11 +28,11 @@ void setup()
 {
   
   irrecv.enableIRIn(); 
-  jyoservo_1.attach(5);
+  jyoservo_1.attach(3);
   jyoservo_2.attach(6);
-  jyoservo_3.attach(9);
-  jyoservo_4.attach(10);
-  jyoservo_5.attach(11);
+  jyoservo_3.attach(7);
+  jyoservo_4.attach(9);
+  jyoservo_5.attach(10);
  
 }
 
@@ -53,7 +53,7 @@ void loop() {
     delay(95);
 
    }
-    if (results.value==0xbakchodi1){//add +10 degress to servo position
+    if (results.value==0xFFE21D){//add +10 degress to servo position
  if(pos<180){
      pos=pos+10;
     jyoservo_1.write(pos);
@@ -81,7 +81,7 @@ void loop() {
     jyoservo_5.write(180);
     delay(95);
     }
-       if (results.value==0xbakchodi2){// decrease servo position by 10
+       if (results.value==0xFF22DD){// decrease servo position by 10
        if(pos>0){
   pos=pos-10;
        jyoservo_1.write(pos);
@@ -95,7 +95,7 @@ void loop() {
     jyoservo_5.write(pos);
     delay(15);
     }}
-    if (results.value==0xbakwaass){ //move the servo to 170 degrees position
+    if (results.value==0xFF02FD){ //move the servo to 170 degrees position
  
     jyoservo_1.write(20);
     delay(15);
@@ -108,7 +108,7 @@ void loop() {
     jyoservo_5.write(20);
     delay(15);
     }
-    if (results.value==0xbakwaaass1){ //move the servo to 170 degrees position
+    if (results.value==0xFFC23D){ //move the servo to 170 degrees position
  
     jyoservo_1.write(20);
     delay(15);
@@ -121,7 +121,7 @@ void loop() {
     jyoservo_5.write(20);
     delay(15);
     }
-    if (results.value==0xbakwaas2){ //move the servo to 170 degrees position
+    if (results.value==0xFFE01F){ //move the servo to 170 degrees position
  
     jyoservo_1.write(20);
     delay(15);
@@ -134,7 +134,7 @@ void loop() {
     jyoservo_5.write(20);
     delay(95);
     }
-    if (results.value==0xbakwaass3){ //move the servo to 170 degrees position
+    if (results.value==0xFFA857){ //move the servo to 170 degrees position
  
     jyoservo_1.write(180);
     delay(15);
@@ -147,7 +147,7 @@ void loop() {
     jyoservo_5.write(20);
     delay(95);
     }
-    if (results.value==0xbhnchd){ //move the servo to 170 degrees position
+    if (results.value==0xFF38C7){ //move the servo to 170 degrees position
  
     jyoservo_1.write(20);
     delay(15);
