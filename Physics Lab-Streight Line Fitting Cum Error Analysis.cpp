@@ -132,7 +132,7 @@ deltemp=(n*sumxi2)-((sumxi)*(sumxi));
 dela = dely*(sqrt((sumxi2)/deltemp));
 delb = dely*(sqrt((n)/deltemp));
 
-cout<<deltemp<<" bakchodi"<<endl;
+
 cout<<"calculating, we get: ** Error in the slope (delB) is : "<<delb<<endl;
 cout<<"		**And the error in the Y intercept (delA) is : "<<dela<<endl;
 
