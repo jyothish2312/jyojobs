@@ -103,7 +103,7 @@ cout<<"-------------------------------------------------------------------------
 cout<<endl;
 cout<<"The error in Y (let's call it DelY) can be found out through the mean daviation in Y w.r.t. the new calculated values: "<<endl;
 cout<<endl;
-cout<<"i.e. ' DelY = (sum((Yn-Yi)^2))/N ' ___ which is valid for N < 10;     |or|   ' (sum((Yn-Yi)^2))/(N-2)' ___for N > 10"<<endl;
+cout<<"i.e. ' DelY = sqrt((sum((Yn-Yi)^2))/N) ' ___ which is valid for N < 10;     |or|   ' sqrt((sum((Yn-Yi)^2))/(N-2))' ___for N > 10"<<endl;
 cout<<endl;
 cout<<"That calculates out our error i.e. Del-Y = ";
 
@@ -123,8 +123,8 @@ cout<<dely<<endl;
 cout<<endl;
 
 cout<<"Now, the errors in the slope (b) and intercept (a) can be calculated using : "<<endl;
-cout<<"			## delA = DelY*(sumX^2/((N*sumX^2) - (sumX)^2)) "<<endl;
-cout<<" 		## delB = DelY*(N/((N*sumX^2) - (sumX)^2)) "<<endl;
+cout<<"			## delA = DelY*sqrt((sumX^2/((N*sumX^2) - (sumX)^2))) "<<endl;
+cout<<" 		## delB = DelY*sqrt((N/((N*sumX^2) - (sumX)^2))) "<<endl;
 cout<<endl;
 
 double dela, delb, deltemp;
