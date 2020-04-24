@@ -1,0 +1,57 @@
+//This code is goes with the input multiplexer circuit for Digital input with arduino.
+//Circuit Diagram can be found at: https://drive.google.com/open?id=1F5SqJ3AgefzhTg9HJ77Vo_nJ5mZVHU76
+//Sincere Thanks to Shriman Keshri for helping with debugging
+
+int matrix[11][4]={{1,0,0,0},{1,1,0,0},{0,1,0,0},{0,1,1,0},{0,0,1,0},
+                  {0,0,1,1},{0,1,0,1},{0,0,0,1},{1,0,1,0},{1,0,0,1},{0,0,0,0}};
+//This is the Matrix of 4 bit signals that are configured across the circuit.
+//we write a function that compares the recieved signal with the above matrix.
+
+int Compare(){
+int test[4] = {(digitalRead(4)),(digitalRead(5)),(digitalRead(6)),(digitalRead(7))};
+//recieved signal is stored in the array named test[]
+
+//int i and n are row and column id's
+int i = 0;
+int n = 0;
+
+while(n<4 && i<11){
+  n=0;
+  while((test[n])==(matrix[i][n])&& (n<4)){
+    n++;
+    }
+  i++;
+}
+  return (i-1);
+  //the row ID is returned to the main function as a result
+}
+
+
+
+void setup(){
+  pinMode(4, INPUT);
+  pinMode(5, INPUT);
+  pinMode(6, INPUT);
+  pinMode(7, INPUT);
+  Serial.begin(9600);
+}
+
+void loop(){
+ 
+int number = (Compare())+ 65;
+//recieving the row id, and adding 65 to make ASCII conversion to a character --see else statement for better understanding
+  
+  if(number ==75){
+    Serial.println("NO BUTTON PRESSED !!");
+  	delay(400);
+  }
+ 
+  else{
+char z = char(number);
+Serial.print("Button '");
+Serial.print( (char(number)));
+Serial.println("' is pressed");
+  delay(400);
+  }
+  
+}
